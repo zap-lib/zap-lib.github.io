@@ -65,3 +65,7 @@ See more examples on [zap-lib/examples](https://github.com/zap-lib/examples) rep
 
 - Node.js: [github.com/zap-lib/node](https://github.com/zap-lib/node)
 - Kotlin: [github.com/zap-lib/kotlin](https://github.com/zap-lib/node)
+
+## License
+
+Zap is released under the [Apache License, Version 2.0](LICENSE).

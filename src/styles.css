@@ -1,0 +1,17 @@
+table {
+  margin: 0;
+  width: 100%;
+}
+
+table tbody tr {
+  background-color: #fff !important;
+}
+
+table td {
+  border: 1px #000 solid;
+}
+
+table thead th {
+  border: 1px #000 solid;
+  background-color: #efefef;
+}

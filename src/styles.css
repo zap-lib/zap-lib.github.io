@@ -15,3 +15,7 @@ table thead th {
   border: 1px #000 solid;
   background-color: #efefef;
 }
+
+table td hr {
+  color: #efefef;
+}

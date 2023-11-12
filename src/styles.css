@@ -4,18 +4,18 @@ table {
 }
 
 table tbody tr {
-  background-color: #fff !important;
+  background-color: var(--bg) !important;
 }
 
 table td {
-  border: 1px #000 solid;
+  border: 1px var(--fg) solid;
 }
 
 table thead th {
-  border: 1px #000 solid;
-  background-color: #efefef;
+  border: 1px var(--fg) solid;
+  background-color: var(--table-header-bg)
 }
 
 table td hr {
-  color: #efefef;
+  color: var(--talbe-border-color);
 }

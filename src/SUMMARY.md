@@ -2,7 +2,7 @@
 
 - [Introduction](./introduction.md)
 
-- [Getting Started]()
+- [Getting Started](./getting-started.md)
 - [Architectures](./architectures/README.md)
   - [Project Structures](./architectures/project-structures.md)
   - [ZAPP (Zap Protocol)](./architectures/zap-protocol.md)

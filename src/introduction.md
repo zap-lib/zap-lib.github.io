@@ -21,7 +21,7 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
   private lateinit var zap: ZapClient
 
   override fun onCreate(state: Bundle?) {
-    // Create a new zap client with the server's IP address.
+    // Create a new Zap client with the server's IP address.
     zap = ZapClient(InetAddress.getByName(...))
   }
 
@@ -42,12 +42,13 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
 On the server device, the server instance can retrieve the data from accelerometer sensor on the client device. In this example, TypeScript code is executed on the Node.js runtime on a desktop.
 
 ```typescript
-// Create and start a new zap server to listen for data from clients.
+// Create and start a new Zap server to listen for data from clients.
 new class extends ZapServer {
   // Define the method that is called whenever accelerometer sensor data is
   // received from client devices.
-  onAccelerometerChanged(id: string, x: number, y: number, z: number) {
-    console.log(`Data received from ${id} (x: ${x}, y: ${y}, z: ${z})`);
+  onAccelerometerChanged(info: MetaInfo, data: ZapAccelerometer) {
+    console.log(`Data received from ${info.address}:
+      (${data.x}, ${data.y}, ${data.z})`);
   }
 }.listen();
 ```

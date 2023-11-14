@@ -22,7 +22,7 @@ For more information about the protocol, read [ZAPP page](../architectures/zap-p
 |------|-----------|-------------|
 | property | `timestamp: 64_bit_uint` | An epoch time in milliseconds for creation time of `ZappObject`. (default: Current epoch) |
 | property | `resource: ZapResource` | A resource type of the payload. It indicates a format of payload. |
-| function | `writeTo(b: bytes): bytes` | Write `ZappHeader` to given `b` and return it. The given `b` MUST be encoeed as ZAPP Header. |
+| function | `writeTo(b: bytes): bytes` | Write `ZappHeader` to given `b` and return it. The given `b` MUST be encoded as ZAPP Header. |
 | static function | `from(b: bytes): ZappHeader` | Read bytes from the given `b` and decode it to `ZappHeader`. |
 
 ## `ZappPayload`
@@ -36,5 +36,5 @@ An interface for data exchange through Zap. Data objects exchanged via Zap MUST 
 | type | signature | description |
 |------|-----------|-------------|
 | property | `resource: ZapResource` | A resource type of the object. |
-| function | `toPayload(): ZappPayload` | Encode `Zapable` to `ZapPayload` and return it. |
+| function | `toPayload(): ZappPayload` | Encode `Zapable` to `ZappPayload` and return it. |
 | static function | `from(payload: ZappPayload): Zapable` | Decode and return `Zapable` object from `ZappPayload`. If possible, it is RECOMMENDED to separate it into `interface DeZapable` to enforce implementation. <hr> `payload`: A payload to decode to `Zapable` object. |

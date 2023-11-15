@@ -73,6 +73,7 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
   override fun onSensorChanged(event: SensorEvent) {
     if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
       val (x, y, z) = event.values
+      Log.i(this::class.java.simpleName, "$x, $y, $z")
     }
   }
 
@@ -122,6 +123,7 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
   override fun onSensorChanged(event: SensorEvent) {
     if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
       val (x, y, z) = event.values
+-     Log.i(this::class.java.simpleName, "$x, $y, $z")
 +     zap.send(ZapAccelerometer(x, y, z))
     }
   }

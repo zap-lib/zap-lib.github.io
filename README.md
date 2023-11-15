@@ -41,13 +41,13 @@ On the server device, the server instance can retrieve the data from acceleromet
 
 ```typescript
 // Create and start a new zap server to listen for data from clients.
-new class extends ZapServer {
+(new class extends ZapServer {
   // Define the method that is called whenever accelerometer sensor data is
   // received from client devices.
-  onAccelerometerChanged(id: string, x: number, y: number, z: number) {
-    console.log(`Data received from ${id} (x: ${x}, y: ${y}, z: ${z})`);
+  onAccelerometerChanged(info: MetaInfo, data: ZapAccelerometer) {
+    console.log(`Data received from ${info.dgram.address}: (${data.x}, ${data.y}, ${data.z})`);
   }
-}.listen();
+}).listen();
 ```
 
 The main goal of Zap is to support mobile-PC communication, but it also extends its capabilities to enable mobile-mobile and PC-PC communication. Furthermore, it's not limited to PCs; any devices capable of running Zap implementations(e.g., Kiosk device, Smart TV, etc.) can also participate in this communication.

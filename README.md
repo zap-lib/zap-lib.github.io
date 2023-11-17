@@ -4,7 +4,7 @@ Zap is an application programming library for building multi-device application 
 
 The data sources available on mobile devices are valuable, but are often device-dependent, limiting their widespread use. Imagine if PCs could use the series of data from the accelerometer sensor on a mobile device. A simple example is using smartphone as motion controller for PC.
 
-<video src="https://user-images.githubusercontent.com/6410412/281803373-bd6b55e0-65cd-421a-9504-5df169d31c03.mp4" muted controls></viedo>
+<video src="https://user-images.githubusercontent.com/6410412/283820914-3d29fa2c-ce84-4be2-9536-0dc32316f9fa.mp4" muted controls></viedo>
 
 In the video above, a smartphone served as a motion controller for the driving game '[slow roads](https://slowroads.io/)' running on laptop. The smartphone's accelerometer sensor transmitted the measured values to the laptop via Zap client, where the laptop received these values through Zap server. Subsequently, the server triggers a specific keys(in this case, 'A' and 'D' keys) based on the values and their corresponding thresholds.
 

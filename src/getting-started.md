@@ -19,7 +19,7 @@ Now, simply create an index.js file and write the Zap server. This server will r
 import { ZapServer } from 'zap-lib-js';
 
 (new class extends ZapServer {
-  onAccelerometerChanged(info, data) {
+  onAccelerometerReceived(info, data) {
     console.log(`Data received from ${info.dgram.address}: (${data.x}, ${data.y}, ${data.z})`);
   }
 }).listen();

@@ -4,30 +4,94 @@
 
 A registry of resources supported by Zap and their identification keys.
 
-| property | key<br>(8-bit uint) | description |
+| property | key<br>(8-bit uint) | type |
 |------|-----------|-------------|
-| `ACCELEROMETER` | 10 | A data measured by an accelerometer sensor. |
-| `UI_EVENT` | 20 | A data related to event raised by the user interface. |
-| `TEXT` | 30 | A simple text data. |
-
-## `ZapText`
-
-Represent simple text.
-
-| type | signature | description |
-|------|-----------|-------------|
-| property | `str: string` | Just string. |
-| property | `charset` | A character set of `str`. (default: UTF-8) |
+| `ACCELEROMETER` | 10 | `ZapAccelerometer` |
+| `GRAVITY` | 11 | `ZapGravity` |
+| `GYROSCOPE` | 12 | `ZapGyroscope` |
+| `ILLUMINANCE` | 13 | `ZapIlluminance` |
+| `MAGNETIC_FIELD` | 14 | `ZapMagneticField` |
+| `UI_EVENT` | 20 | `ZapUiEvent` |
+| `TEXT` | 30 | `ZapText` |
+| `GEO_POINT` | 31 | `ZapGeoPoint` |
 
 ## `ZapAccelerometer`
 
-Represent values measured by accelerometer sensor.
+Represent values measured by accelerometer sensor
+
+```text
++-------------+-------------+-------------+
+| x (32 bits) | y (32 bits) | z (32 bits) |
++-------------+-------------+-------------+
+```
 
 | type | signature | description |
 |------|-----------|-------------|
 | property | `x: float` | Acceleration force along the x axis. (m/s²) |
 | property | `y: float` | Acceleration force along the y axis. (m/s²) |
 | property | `z: float` | Acceleration force along the z axis. (m/s²) |
+
+## `ZapGravity`
+
+Represent the force of gravity that is applied to a device.
+
+```text
++-------------+-------------+-------------+
+| x (32 bits) | y (32 bits) | z (32 bits) |
++-------------+-------------+-------------+
+```
+
+| type | signature | description |
+|------|-----------|-------------|
+| property | `x: float` | Force of gravity along the x axis. (m/s²) |
+| property | `y: float` | Force of gravity along the y axis. (m/s²) |
+| property | `z: float` | Force of gravity along the z axis. (m/s²) |
+
+## `ZapGyroscope`
+
+Represent a device's rate of rotation.
+
+```text
++-------------+-------------+-------------+
+| x (32 bits) | y (32 bits) | z (32 bits) |
++-------------+-------------+-------------+
+```
+
+| type | signature | description |
+|------|-----------|-------------|
+| property | `x: float` | Rate of rotation around the x axis. (rad/s) |
+| property | `y: float` | Rate of rotation around the y axis. (rad/s) |
+| property | `z: float` | Rate of rotation around the z axis. (rad/s) |
+
+## `ZapIlluminance`
+
+Represent the ambient light level.
+
+```text
++--------------+
+| lx (32 bits) |
++--------------+
+```
+
+| type | signature | description |
+|------|-----------|-------------|
+| property | `lx: float` | Ambient light level. (lx) |
+
+## `ZapMagneticField`
+
+Represent a ambient geomagnetic field.
+
+```text
++-------------+-------------+-------------+
+| x (32 bits) | y (32 bits) | z (32 bits) |
++-------------+-------------+-------------+
+```
+
+| type | signature | description |
+|------|-----------|-------------|
+| property | `x: float` | Geomagnetic field strength along the x axis. (μT) |
+| property | `y: float` | Geomagnetic field strength along the y axis. (μT) |
+| property | `z: float` | Geomagnetic field strength along the z axis. (μT) |
 
 ## `ZapUiEvent`
 
@@ -45,3 +109,27 @@ Represent data related to event raised by the user interface.
 |------|-----------|-------------|
 | `CLICK_DOWN` | `CLICK_DOWN` | An event triggered when a click (or touch) is initiated on the UI. |
 | `CLICK_UP` | `CLICK_UP` | An event triggered when a click (or touch) on the UI has ended. |
+
+## `ZapText`
+
+Represent simple text.
+
+| type | signature | description |
+|------|-----------|-------------|
+| property | `str: string` | Just string. |
+| property | `charset` | A character set of `str`. (default: UTF-8) |
+
+## `ZapGeoPoint`
+
+Represent a point on earth in geological coordinates.
+
+```text
++--------------------+---------------------+
+| latitude (64 bits) | longitude (64 bits) |
++--------------------+---------------------+
+```
+
+| type | signature | description |
+|------|-----------|-------------|
+| property | `latitude: double` | A latitude of the point. |
+| property | `longitude: double` | A longitude of the point. |

@@ -10,4 +10,4 @@ The header consists of a timestamp and a resource field. The first 64 bits of th
 
 Following the timestamp, the next 8 bits constitute the resource field. The resource field informs which resource the payload represents and simultaneously implies how the payload is encoded. This field can be interpreted as an unsigned integer.
 
-After the 72-bit header, there is the payload part. The format of the payload varies depending on the resource. It can be a simple primitive type, text with delimiters, or JSON. The maximum length of the payload is theoretically up to 65,518 bytes, although it may vary depending on the implementation of Zap server.
+After the 72-bit header, there is the payload part. The format of the payload varies depending on the resource. It can be a simple primitive type, text with delimiters, or JSON. Refer to the [Resources](../specifications/resources.md) page for information on the payload format each resource takes. The maximum length of the payload is theoretically up to 65,518 bytes, although it may vary depending on the implementation of Zap server.

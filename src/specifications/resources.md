@@ -114,10 +114,34 @@ Represent data related to event raised by the user interface.
 
 Represent simple text.
 
+```text
++------------------+--------------+
+| charset (8 bits) | str (n bits) |
++------------------+--------------+
+```
+
 | type | signature | description |
 |------|-----------|-------------|
 | property | `str: string` | Just string. |
-| property | `charset` | A character set of `str`. (default: UTF-8) |
+| property | `charset: ZapCharset` | A character set of `str`. (default: UTF-8) |
+
+### `ZapCharset`
+
+The character sets.
+
+> Some platforms may support only the limited character sets. In such cases, it is RECOMMENDED to either enforce the use of the different character sets or consider it as an error.
+
+| property | key<br>(8-bit uint) |
+|----------|---------------------|
+| UTF_8 | 0 |
+| UTF_16 | 1 |
+| UTF_16BE | 2 |
+| UTF_16LE | 3 |
+| UTF_32 | 4 |
+| UTF_32BE | 5 |
+| UTF_32LE | 6 |
+| ISO_8859_1 | 7 |
+| US_ASCII | 8 |
 
 ## `ZapGeoPoint`
 

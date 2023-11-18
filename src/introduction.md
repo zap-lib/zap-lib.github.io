@@ -16,7 +16,7 @@ Of course, it can also become a simple remote controller, not a motion controlle
 
 To overcome the limitation that data sources are confined to a single mobile device, Zap provides its own network protocol and programming interface to access data sources on other devices. Please check the [Architectures](./architectures) section for more information about Zap's communication specification and structure.
 
-![](https://user-images.githubusercontent.com/6410412/283972762-95116c23-542e-40ed-b408-5ee1c00c86ea.png)
+![](https://user-images.githubusercontent.com/6410412/283973098-a0ffa51f-8db8-4f50-ac17-8e1ca914dd43.png)
 
 In the following application code blocks, it shows that the client instance on an Android device sends acceleration force data to the server device.
 

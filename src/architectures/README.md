@@ -4,6 +4,6 @@ Zap is structured as a client-server model. The client unidirectionally sends da
 
 ![](https://user-images.githubusercontent.com/6410412/283973098-a0ffa51f-8db8-4f50-ac17-8e1ca914dd43.png)
 
-A data sent from the client to the server is transmitted over UDP socket. Zap is implemented to send this data by defining 'ZAPP Object' defined on top of datagram, which contain the client's UUID, resource type, and the actual data value. ZAPP Object is the data unit of ZAPP(Zap Protocol), for more detailed information about the protocol, please check the [ZAPP page](./zap-protocol.md).
+A data sent from the client to the server is transmitted over UDP socket. Zap is implemented to send this data by defining 'ZAPP Object' defined on top of datagram, which contain the timestamp, resource type, and the actual data. ZAPP Object is the data unit of ZAPP(Zap Protocol), for more detailed information about the protocol, please check the [ZAPP page](./zap-protocol.md).
 
 Zap uses callback functions to enable the transformation of a single-device application into a multi-device application while maintaining its own structure. The client, after obtaining the data they wish to transmit through the data source access API provided by their development framework, simply needs to call `zap.send(...)`. The server, running a Zap server instance, only needs to define callback functions to specify what code to execute each time it receives data from the client.

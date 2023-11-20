@@ -3,6 +3,7 @@ site_description: A library for building multi-device applications
 site_url: https://zap-lib.github.io/
 plugins:
   - social
+  - search
 nav:
   - Introduction: index.md
   - Getting Started: getting-started.md

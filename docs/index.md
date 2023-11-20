@@ -1,20 +1,22 @@
-# Introduction
-
-<img src="https://user-images.githubusercontent.com/6410412/280930996-ab5931f7-1f1f-42b9-a243-63d1d9c3ada4.png" width="128px" height="128px" />
+# Zap: A library for building multi-device applications
 
 Zap is an application programming library for building multi-device application that enable communication with other devices. While mobile devices offer a wide range of data sources, such as motion sensors, biometrics devices, microphones, touchscreens and more, traditional PCs like laptops and desktops are typically lack these resources.
 
 The data sources available on mobile devices are valuable, but are often device-dependent, limiting their widespread use. Imagine if PCs could use the series of data from the accelerometer sensor on a mobile device. A simple example is using smartphone as motion controller for PC.
 
-<video src="https://user-images.githubusercontent.com/6410412/284037217-6dbbdcce-1cf4-4c92-b903-15f670bfa9bc.mp4" muted controls></viedo>
+<video muted controls>
+    <source src="https://user-images.githubusercontent.com/6410412/284037217-6dbbdcce-1cf4-4c92-b903-15f670bfa9bc.mp4" type="video/mp4" />
+</video>
 
 In the video above, a smartphone served as a motion controller for the driving game '[slow roads](https://slowroads.io/)' running on laptop. The smartphone's accelerometer sensor transmitted the measured values to the laptop via Zap client, where the laptop received these values through Zap server. Subsequently, the server triggers a specific keys(in this case, 'A' and 'D' keys) based on the values and their corresponding thresholds.
 
 Of course, it can also become a simple remote controller, not a motion controller. Below, a video demonstrates using a smartphone as a controller to play '[Super Mario Bros.](https://supermario-game.com/)'.
 
-<video src="https://user-images.githubusercontent.com/6410412/281803217-38e92248-7f19-4b56-be38-f6339e9c4086.mp4" muted controls></viedo>
+<video muted controls>
+    <source src="https://user-images.githubusercontent.com/6410412/281803217-38e92248-7f19-4b56-be38-f6339e9c4086.mp4" type="video/mp4" />
+</video>
 
-To overcome the limitation that data sources are confined to a single mobile device, Zap provides its own network protocol and programming interface to access data sources on other devices. Please check the [Architectures](./architectures) section for more information about Zap's communication specification and structure.
+To overcome the limitation that data sources are confined to a single mobile device, Zap provides its own network protocol and programming interface to access data sources on other devices. Please check the [Architectures](./architectures/index.md) section for more information about Zap's communication specification and structure.
 
 ![](https://user-images.githubusercontent.com/6410412/283973098-a0ffa51f-8db8-4f50-ac17-8e1ca914dd43.png)
 

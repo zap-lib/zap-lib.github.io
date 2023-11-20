@@ -1,0 +1,50 @@
+site_name: Zap
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Architectures:
+    - architectures/index.md
+    - architectures/project-structures.md
+    - architectures/zap-protocol.md
+  - Specifications:
+    - specifications/index.md
+    - specifications/client-and-server.md
+    - specifications/models.md
+    - specifications/resources.md
+  - Implementations: implementations.md
+  - GitHub ↗: https://github.com/zap-lib
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
+  palette:
+    scheme: zap
+  features:
+    - navigation.tabs
+    - search.highlight
+    - content.action.edit
+    - optimize
+    - navigation.instant
+    - navigation.top
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra_css:
+  - stylesheets/extra.css
+extra:
+  homepage: https://zap-lib.github.io/
+  social:
+    - icon: fontawesome/brands/github
+      name: GitHub
+      link: https://github.com/zap-lib

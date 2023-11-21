@@ -18,7 +18,7 @@ In the video above, a smartphone served as a motion controller for the driving g
 Of course, it can also become a simple remote controller, not a motion controller. The following video demonstrates using a smartphone as a presentation remote clicker.
 
 <video muted controls>
-    <source src="https://user-images.githubusercontent.com/6410412/284578042-cc12f221-8f59-4711-8f33-2b1a11064220.mp4" type="video/mp4" />
+    <source src="https://user-images.githubusercontent.com/6410412/284641055-c2e20e80-1994-4e52-8766-941683b9a040.mp4" type="video/mp4" />
 </video>
 
 To overcome the limitation that data sources are confined to a single mobile device, Zap provides its own network protocol and programming interface to access data sources on other devices. Please check the [Architectures](./architectures/index.md) section for more information about Zap's communication specification and structure.

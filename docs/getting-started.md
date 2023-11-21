@@ -42,23 +42,23 @@ Now that we've created the server, let's create the client. Let's consider the c
 
 Create an Android project based on an empty activity, and then add dependency. Since Zap is distributed through JitPack, you need to first add the JitPack repository to the `settings.gradle` file.
 
-```diff
+```kotlin hl_lines="6"
 dependencyResolutionManagement {
   repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
   repositories {
     google()
     mavenCentral()
-+   maven { url 'https://jitpack.io' }
+    maven { url 'https://jitpack.io' }
   }
 }
 ```
 
 Next, add the dependency to the `build.gradle` file. Replace `$VERSION` with your desired version. For example, if you want to use version v0.1.0, input `0.1.0`.
 
-```diff
+```kotlin hl_lines="3"
 dependencies {
   // ...
-+ implementation 'com.github.zap-lib:kotlin:$VERSION'
+  implementation 'com.github.zap-lib:kotlin:$VERSION'
 }
 ```
 
@@ -100,10 +100,10 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
 
 In this state, when you build and run the application, the values measured based on the x, y, z axes will be logged every time the device is tilted. Now, let's send the values to the server using Zap. Since Zap communicates through UDP socket, you need to add `INTERNET` permission to the `AndroidManifest.xml` file first.
 
-```diff
+```xml hl_lines="3"
 <?xml ...>
 <manifest ...>
-+   <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application ...>
       <activity ... />
     </application>
@@ -112,24 +112,24 @@ In this state, when you build and run the application, the values measured based
 
 Sending data using Zap is really easy. You just need to add a few lines to the code written above.
 
-```diff
+```kotlin hl_lines="3 10 17 33"
 class MainActivity: AppCompatActivity(), SensorEventListener {
   private lateinit var sensorManager: SensorManager
-+ private lateinit var zap: ZapClient
+  private lateinit var zap: ZapClient
 
   override fun onCreate(state: Bundle?) {
     super.onCreate(state)
     setContentView(R.layout.activity_main)
 
     sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-+   zap = ZapClient(InetAddress.getByName("192.168.0.1"))
+    zap = ZapClient(InetAddress.getByName("192.168.0.1"))
   }
 
   override fun onSensorChanged(event: SensorEvent) {
     if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
       val (x, y, z) = event.values
--     Log.i(this::class.java.simpleName, "$x, $y, $z")
-+     zap.send(ZapAccelerometer(x, y, z))
+      Log.i(this::class.java.simpleName, "$x, $y, $z")
+      zap.send(ZapAccelerometer(x, y, z))
     }
   }
 
@@ -145,7 +145,7 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
   override fun onStop() {
     super.onStop()
     sensorManager.unregisterListener(this)
-+   zap.stop()
+    zap.stop()
   }
 }
 ```

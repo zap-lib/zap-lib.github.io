@@ -16,10 +16,10 @@ The data sources available on mobile devices are valuable, but are often device-
 
 In the video above, a smartphone served as a motion controller for the driving game '[slow roads](https://slowroads.io/)' running on laptop. The smartphone's accelerometer sensor transmitted the measured values to the laptop via Zap client, where the laptop received these values through Zap server. Subsequently, the server triggers a specific keys(in this case, 'A' and 'D' keys) based on the values and their corresponding thresholds.
 
-Of course, it can also become a simple remote controller, not a motion controller. Below, a video demonstrates using a smartphone as a controller to play '[Super Mario Bros.](https://supermario-game.com/)'.
+Of course, it can also become a simple remote controller, not a motion controller. The following video demonstrates using a smartphone as a presentation remote clicker.
 
 <video muted controls>
-    <source src="https://user-images.githubusercontent.com/6410412/281803217-38e92248-7f19-4b56-be38-f6339e9c4086.mp4" type="video/mp4" />
+    <source src="https://user-images.githubusercontent.com/6410412/284578042-cc12f221-8f59-4711-8f33-2b1a11064220.mp4" type="video/mp4" />
 </video>
 
 To overcome the limitation that data sources are confined to a single mobile device, Zap provides its own network protocol and programming interface to access data sources on other devices. Please check the [Architectures](./architectures/index.md) section for more information about Zap's communication specification and structure.

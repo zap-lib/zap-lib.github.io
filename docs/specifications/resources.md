@@ -107,6 +107,7 @@ Represent data related to event raised by the user interface.
 
 | property | value | description |
 |------|-----------|-------------|
+| `CLICK` | `CLICK` | An event triggered when a click (or touch) on the UI begins and ends within a short period. |
 | `CLICK_DOWN` | `CLICK_DOWN` | An event triggered when a click (or touch) is initiated on the UI. |
 | `CLICK_UP` | `CLICK_UP` | An event triggered when a click (or touch) on the UI has ended. |
 

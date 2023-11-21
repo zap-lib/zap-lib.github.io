@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Implementations
 
 - Node.js: [github.com/zap-lib/node](https://github.com/zap-lib/node)

@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Getting Started
 
 Let's explore step-by-step how to create a multi-device application using Zap. In this example, we'll use the [Zap Kotlin implementation](https://github.com/zap-lib/kotlin) on Android to real-time transmit accelerometer sensor values from a mobile device to a [Zap Node.js implementation](https://github.com/zap-lib/node) running on a laptop.

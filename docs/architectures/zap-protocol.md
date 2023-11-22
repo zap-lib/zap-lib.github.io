@@ -4,7 +4,7 @@ Zap defines a new network protocol over UDP to facilitate data exchange in an ag
 
 The ZAPP Object is divided into two main parts: the header and the payload. The header contains metadata about the ZAPP Object, while the payload represents the actual data of interest to the communicating parties.
 
-![](https://user-images.githubusercontent.com/6410412/283739668-6a2607b8-bc11-4a8b-8898-0e71282038d8.png)
+![](https://user-images.githubusercontent.com/6410412/284769831-6a80cd39-fb13-41b8-8db7-fd135a4e1aab.svg)
 
 The header consists of a timestamp and a resource field. The first 64 bits of the header constitute the timestamp field, representing the epoch time in milliseconds when the ZAPP Object was created. As UDP does not guarantee the order of datagrams, this field can be utilized if the order of data is crucial. This field can be interpreted as an unsigned integer.
 
